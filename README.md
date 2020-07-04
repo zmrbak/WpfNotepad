@@ -12,3 +12,4 @@
 
 <li><img src="https://raw.githubusercontent.com/zmrbak/WpfNotepad/master/%E5%AD%A6%E5%91%98%E8%AF%84%E4%BB%B7/Screenshot_2020-07-01-23-06-54.png"><br/>
 <li><img src="https://raw.githubusercontent.com/zmrbak/WpfNotepad/master/%E5%AD%A6%E5%91%98%E8%AF%84%E4%BB%B7/Screenshot_2020-07-01-23-07-20.png"><br/>
+<li><img src="https://raw.githubusercontent.com/zmrbak/WpfNotepad/master/%E5%AD%A6%E5%91%98%E8%AF%84%E4%BB%B7/Screenshot_2020-07-03-14-15-42.png"><br/>
