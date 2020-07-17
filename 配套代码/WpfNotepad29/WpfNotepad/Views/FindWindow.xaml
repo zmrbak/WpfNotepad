@@ -1,0 +1,109 @@
+﻿<Window
+    x:Class="WpfNotepad.Views.FindWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:WpfNotepad.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WpfNotepad.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="clr-namespace:WpfNotepad.Models"
+    x:Name="window"
+    Title="查找"
+    Width="438"
+    Height="186"
+    DataContext="{Binding Source={StaticResource Locator}, Path=FindWindowModel}"
+    Icon="{x:Null}"
+    ResizeMode="NoResize"
+    ShowInTaskbar="False"
+    WindowStartupLocation="CenterOwner"
+    mc:Ignorable="d">
+    <!--<Window.DataContext>
+        <models:DocumentModel />
+    </Window.DataContext>-->
+    <Window.Resources>
+        <converters:BooleanReveseConverter x:Key="BooleanReveseConverter" />
+    </Window.Resources>
+    <Grid Background="{DynamicResource {x:Static SystemColors.MenuBarBrushKey}}" DataContext="{Binding DocumentModel}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="125*" />
+            <ColumnDefinition Width="170*" />
+            <ColumnDefinition Width="102*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="6*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Label
+                Margin="3"
+                Padding="3"
+                VerticalAlignment="Center"
+                Content="查找内容(_N):" />
+            <TextBox
+                Width="186"
+                Margin="3"
+                Padding="3"
+                VerticalAlignment="Center"
+                Text="{Binding FindText}" />
+        </StackPanel>
+        <Button
+            Grid.Column="2"
+            Width="90"
+            Height="25"
+            Margin="3"
+            Padding="3"
+            Command="{Binding DataContext.FindTextCommand, ElementName=window}"
+            Content="查找下一个(_F)" />
+        <CheckBox
+            Grid.Row="1"
+            Grid.Column="0"
+            Height="21"
+            Margin="3"
+            Padding="3"
+            VerticalAlignment="Bottom"
+            VerticalContentAlignment="Center"
+            Content="区分大小写(_C)"
+            IsChecked="{Binding IsFindCaseSensitive}" />
+        <GroupBox
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="3"
+            Padding="3"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Header="方向">
+            <StackPanel Orientation="Horizontal">
+                <RadioButton
+                    Margin="3"
+                    Padding="3"
+                    VerticalContentAlignment="Center"
+                    Content="向上(_U)"
+                    IsChecked="{Binding IsFindUp}" />
+                <RadioButton
+                    Margin="3"
+                    Padding="3"
+                    VerticalContentAlignment="Center"
+                    Content="向下(_D)"
+                    IsChecked="{Binding IsFindUp, Converter={StaticResource BooleanReveseConverter}}" />
+            </StackPanel>
+        </GroupBox>
+        <Button
+            Grid.Row="1"
+            Grid.Column="2"
+            Width="90"
+            Height="25"
+            Margin="3"
+            Padding="3"
+            VerticalAlignment="Top"
+            Content="取消" />
+        <CheckBox
+            Grid.Row="2"
+            Grid.Column="0"
+            Margin="3"
+            Padding="3"
+            VerticalContentAlignment="Center"
+            Content="循环(_R)"
+            IsChecked="{Binding IsFindCirculated}" />
+    </Grid>
+</Window>
