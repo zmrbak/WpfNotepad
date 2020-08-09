@@ -1,0 +1,63 @@
+﻿<Window
+    x:Class="WpfNotepad.Views.GotoWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:WpfNotepad.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:interactivity="clr-namespace:WpfNotepad.Interactivity"
+    xmlns:local="clr-namespace:WpfNotepad.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="clr-namespace:WpfNotepad.Models"
+    x:Name="window"
+    Title="转到指定行"
+    Width="258"
+    Height="141"
+    DataContext="{Binding Source={StaticResource Locator}, Path=GotoWindowModel}"
+    Icon="{x:Null}"
+    ResizeMode="NoResize"
+    ShowInTaskbar="False"
+    WindowStartupLocation="CenterOwner"
+    mc:Ignorable="d">
+    <interactivity:Interaction.Triggers>
+        <interactivity:EventTrigger EventName="Loaded">
+            <interactivity:InvokeCommandAction Command="{Binding ViewLoadedCommand}" CommandParameter="{Binding ElementName=textBox, Mode=OneWay}" />
+        </interactivity:EventTrigger>
+    </interactivity:Interaction.Triggers>
+    <Window.Resources>
+        <converters:BooleanReveseConverter x:Key="BooleanReveseConverter" />
+    </Window.Resources>
+    <StackPanel Background="{DynamicResource {x:Static SystemColors.MenuBarBrushKey}}" DataContext="{Binding DocumentModel}">
+        <Label
+            Margin="10,3"
+            Padding="3"
+            VerticalAlignment="Center"
+            Content="行号(_L):" />
+        <TextBox
+            x:Name="textBox"
+            Margin="10,3"
+            Padding="3"
+            VerticalAlignment="Center"
+            Text="{Binding GotoLine, UpdateSourceTrigger=PropertyChanged}" />
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button
+                Width="70"
+                Height="25"
+                Margin="10"
+                Padding="3"
+                Command="{Binding DataContext.GotoLineCommand, ElementName=window}"
+                CommandParameter="{Binding ElementName=window, Mode=OneWay}"
+                Content="转到"
+                IsDefault="True" />
+            <Button
+                Width="70"
+                Height="25"
+                Margin="10"
+                Padding="3"
+                VerticalAlignment="Top"
+                Command="{Binding DataContext.CancelCommand, ElementName=window}"
+                CommandParameter="{Binding ElementName=window, Mode=OneWay}"
+                Content="取消"
+                IsCancel="True" />
+        </StackPanel>
+    </StackPanel>
+</Window>
