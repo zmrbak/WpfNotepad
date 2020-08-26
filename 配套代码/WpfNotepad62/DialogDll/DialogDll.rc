@@ -1,0 +1,150 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "winres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(简体，中国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""winres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG1 DIALOGEX 0, 0, 309, 176
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,198,155,50,14
+    PUSHBUTTON      "取消",IDCANCEL,252,155,50,14
+END
+
+IDD_PAGE_SETUP DIALOGEX 0, 0, 419, 258
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "页面设置"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "纸张",1073,9,10,261,73,WS_GROUP
+    LTEXT           "大小(&Z):",1089,19,31,42,12
+    COMBOBOX        1137,75,30,187,160,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    LTEXT           "来源(&S):",1090,19,59,42,12
+    COMBOBOX        1138,75,55,187,160,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    GROUPBOX        "方向",1072,9,90,75,73,WS_GROUP
+    CONTROL         "纵向(&O)",1056,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,19,107,61,16
+    CONTROL         "横向(&A)",1057,"Button",BS_AUTORADIOBUTTON,19,135,61,16
+    GROUPBOX        "边距",1075,93,90,177,73,WS_GROUP
+    LTEXT           "左(&L):",1102,103,111,37,12
+    EDITTEXT        1155,140,107,33,16,WS_GROUP
+    LTEXT           "右(&R):",1103,191,111,37,12
+    EDITTEXT        1157,229,107,33,16,WS_GROUP
+    LTEXT           "上(&T):",1104,103,136,37,12
+    EDITTEXT        1156,140,135,33,16,WS_GROUP
+    LTEXT           "下(&B):",1105,191,136,37,12
+    EDITTEXT        1158,229,135,33,16,WS_GROUP
+    LTEXT           "页眉(&H):",32,9,177,51,12
+    EDITTEXT        30,65,175,203,16,ES_AUTOHSCROLL
+    LTEXT           "页脚(&F):",33,9,201,50,12
+    EDITTEXT        31,65,200,203,16,ES_AUTOHSCROLL
+    CONTROL         "<A>输入值</A>",34,"SysLink",WS_TABSTOP,65,222,129,10
+    DEFPUSHBUTTON   "确定",1,194,228,68,18,WS_GROUP
+    PUSHBUTTON      "取消",2,266,228,68,18
+    PUSHBUTTON      "打印机(&P)...",1026,339,228,68,18
+    GROUPBOX        "预览",-1,280,10,126,207
+    CONTROL         "",1080,"Static",SS_WHITERECT,297,60,93,105
+    CONTROL         "",1081,"Static",SS_GRAYRECT,390,65,5,105
+    CONTROL         "",1082,"Static",SS_GRAYRECT,306,159,93,6
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+
+    IDD_PAGE_SETUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 412
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 251
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_DIALOG1 AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+#endif    // 中文(简体，中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
